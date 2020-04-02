@@ -37,5 +37,30 @@ From within the root directory:
 ```sh
 npm install -g webpack
 npm install
-```
 
+```
+## API Documentation
+
+### GET
+
+Send requests to localhost:3004/apps/:appid
+
+Will pull the app with the corresponding 'id' using.
+
+### POST
+
+Send request to localhost:3004/api/create with a raw JSON body.
+
+Will create a document.
+
+### PUT
+
+Send request to localhost:3004/api/update/:appid with a raw JSON body.
+
+Will update the document with corresponding 'id'
+
+### DELETE
+
+Send request to localhost:3004/api/delete/:appid
+
+Will delete document with corresponding 'id'

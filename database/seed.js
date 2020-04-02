@@ -4,8 +4,8 @@ const faker = require('faker');
 
 const sampleApps = [];
 
-var addFakerData = function() {
-  for(var i = 1; i <= 100 ; i++) {
+var addFakerData = function () {
+  for (var i = 1; i <= 100; i++) {
     var fullName = faker.name.firstName() + ' ' + faker.name.lastName();
     var categories = ['Social', 'Games', 'Finance', 'Lifestyle', 'Productivity'];
     var images = [
@@ -54,31 +54,36 @@ var addFakerData = function() {
       'https://i.picsum.photos/id/572/600/600.jpg',
       'https://i.picsum.photos/id/794/600/600.jpg',
       'https://i.picsum.photos/id/145/600/600.jpg',
-  ]
+    ];
     var randomIndex = Math.floor((Math.random() * 5));
     var randomVersion = Math.floor(Math.random() * (1000 - 100) + 100) / 100;
-    var randomRating = (Math.floor((Math.random() * 10) + 1))/2;
+    var randomRating = (Math.floor((Math.random() * 10) + 1)) / 2;
     var obj = {
-      id : i,
-      name : faker.commerce.product(),
-      author : fullName,
-      imageUrl : faker.random.arrayElement(images),
-      category : categories[randomIndex],
-      updatedAt : faker.date.past(),
-      size : faker.random.number() + 'MB',
-      editorChoice : faker.random.boolean(),
+      id: i,
+      name: faker.commerce.product(),
+      author: fullName,
+      imageUrl: faker.random.arrayElement(images),
+      category: categories[randomIndex],
+      updatedAt: faker.date.past(),
+      size: faker.random.number() + 'MB',
+      editorChoice: faker.random.boolean(),
       rating: randomRating,
       ratings: faker.random.number(),
       currentVersion: randomVersion,
-      installs : faker.random.number()
-    }
+      installs: faker.random.number()
+    };
     sampleApps.push(obj);
   }
 }();
 
-const insertSampleApps = function() {
+const insertSampleApps = function () {
   App.create(sampleApps)
-    .then(() => db.disconnect());
+    .then(() => db.disconnect())
+    .catch((err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
 };
 
 insertSampleApps();
