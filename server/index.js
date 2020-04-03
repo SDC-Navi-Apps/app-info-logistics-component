@@ -36,11 +36,11 @@ app.post('/api/create', (req, res) => {
   console.log(36, req.body);
   App.create(req.body)
     .then((res) => {
-      res.status(300).end();
+      res.sendStatus(300);
     })
     .catch((err) => {
       if (err) {
-        res.status(400).end();
+        res.sendStatus(400);
       }
     });
 });
@@ -48,11 +48,14 @@ app.post('/api/create', (req, res) => {
 app.put('/api/update/:appid', (req, res) => {
   console.log(48, req.params.appid);
   console.log(49, req.body);
-  App.update({ id: req.params.appid }, req.body)
+  App.updateOne({ id: req.params.appid }, req.body)
+    .then((res) => {
+      res.sendStatus(300);
+    })
     .catch((err) => {
       if (err) {
         console.log(err);
-        res.status(400).end();
+        res.sendStatus(400);
       }
     });
 });
@@ -60,7 +63,7 @@ app.put('/api/update/:appid', (req, res) => {
 app.delete('/api/delete/:appid', (req, res) => {
   App.findOneAndDelete({ id: req.params.appid })
     .then((res) => {
-      res.status(300).end()
+      res.status(300).end();
     })
     .catch((err) => {
       if (err) {
