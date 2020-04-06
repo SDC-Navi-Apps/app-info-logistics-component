@@ -12,7 +12,8 @@
     "build": "webpack -d --watch",
     "db:setup": "node database/seed.js",
     "test": "jest",
-    "csv:write": "node database/generateCSV.js"
+    "csv:write": "node database/generateCSV.js",
+    "csv:test": "node database/CSVtest.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
