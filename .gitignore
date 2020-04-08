@@ -28,3 +28,7 @@ spec/__snapshots__
 
 # CSV
 apps.csv
+test.csv
+
+# Resources
+database/images

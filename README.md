@@ -64,3 +64,24 @@ Will update the document with corresponding 'id'
 Send request to localhost:3004/api/delete/:appid
 
 Will delete document with corresponding 'id'
+
+
+
+
+## TABLE STRUCTURE
+
+
+     Column     |         Type          | Collation | Nullable | Default | Storage  | Stats target | Description
+----------------+-----------------------+-----------+----------+---------+----------+--------------+-------------
+ id             | integer               |           | not null |         | plain    |              |
+ name           | character varying(50) |           |          |         | extended |              |
+ author         | character varying(50) |           |          |         | extended |              |
+ imageurl       | character varying(75) |           |          |         | extended |              |
+ category       | character varying(50) |           |          |         | extended |              |
+ updatedat      | character varying(75) |           |          |         | extended |              |
+ size           | character varying(50) |           |          |         | extended |              |
+ editorchoice   | boolean               |           |          |         | plain    |              |
+ rating         | numeric               |           |          |         | main     |              |
+ ratings        | integer               |           |          |         | plain    |              |
+ currentversion | numeric               |           |          |         | main     |              |
+ installs       | integer               |           |          |         | plain    |              |

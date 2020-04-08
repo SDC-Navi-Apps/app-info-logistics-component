@@ -14,7 +14,7 @@
     "test": "jest",
     "csv:write": "node database/generateCSV.js",
     "csv:test": "node database/CSVtest.js",
-    "resources:download": "node database/picDownloader.js"
+    "resources:download": "node database/downloadPics.js"
   },
   "dependencies": {
     "axios": "^0.19.2",

@@ -11,8 +11,8 @@ class App1 extends React.Component {
     super(props);
     this.state = {
       app: {},
-      id: this.props.id || 1
-    }
+      id: this.props.id || 75
+    };
   }
 
   componentDidMount() {
@@ -23,10 +23,10 @@ class App1 extends React.Component {
         });
       })
       .catch(err => {
-        if(err) {
+        if (err) {
           console.log('Error getting data', err);
         }
-      })
+      });
   }
 
   render() {
@@ -34,7 +34,7 @@ class App1 extends React.Component {
       <div>
         <Info app={this.state.app} />
       </div>
-    )
+    );
   }
 }
 
