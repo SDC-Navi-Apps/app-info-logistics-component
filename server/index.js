@@ -1,4 +1,6 @@
+require('newrelic');
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 const App = require('../database/App.js');
@@ -6,6 +8,7 @@ const App = require('../database/App.js');
 const app = express();
 const PORT = 3004;
 
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

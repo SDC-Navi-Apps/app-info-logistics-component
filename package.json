@@ -14,17 +14,24 @@
     "test": "jest",
     "csv:write": "node database/generateCSV.js",
     "csv:test": "node database/CSVtest.js",
-    "resources:download": "node database/downloadPics.js"
+    "resources:download": "node database/downloadPics.js",
+    "cassandra": "nodemon server/cassandraIndex.js",
+    "postgres": "nodemon server/postgresIndex.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.5.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-cassandra": "^2.3.2",
     "fs": "0.0.1-security",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.4",
+    "newrelic": "^6.5.0",
     "nodemon": "^2.0.2",
+    "pg": "^8.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-icons": "^3.9.0"
